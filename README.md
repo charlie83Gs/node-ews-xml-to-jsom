@@ -1,5 +1,5 @@
 # EWS XML to JSON Request Converter 
-This tools is a webapp that allows to conver and xml soap ews api request to the json format
+This tools is a webapp that allows to convert an xml soap ews api request to the json format
 required by node-ews package
 
 
