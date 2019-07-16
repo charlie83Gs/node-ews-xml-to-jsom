@@ -1,0 +1,50 @@
+<html>
+   <head>
+   	
+   	<style type="text/css">
+   		.input_area{
+   			width: 80%;
+   			height: 100pt;
+   			margin: 0 auto;
+   			display: inline-block;
+   		}
+   		body{
+   			text-align: center;
+   		}
+   	</style>
+   	<script type="text/javascript">
+   		//prepare request url
+   		const dir = "http://localhost:8081/convert"
+   		async function onConvert(){
+   		//console.log("convert clicked")
+   		data = document.getElementById("xmlarea").value;
+   		data = encodeURI(data);
+   		var fulldir = dir + "?data="+data;
+   		
+   		//console.log(fulldir)
+   		// Create a request variable and assign a new XMLHttpRequest object to it.
+		var request = new XMLHttpRequest()
+		request.open('POST', fulldir, true)
+		request.onload = function () {
+		  //console.log("request complete")
+		  // Begin accessing JSON data here
+		  var result = this.response;
+		  //set value to second text area
+		  document.getElementById("jsonarea").value = result;
+		}
+		request.send()	
+   		}
+
+   	</script>
+   </head>
+   <body>
+         <h1>SOAP XML REQUEST:</h1>
+         <textarea id="xmlarea" class="input_area" name="data"></textarea>
+         <br/>
+         <button onclick="onConvert()">Convert</button>
+
+      	<h2>Converted json</h2>
+      	<textarea id="jsonarea" class="input_area" name="data"></textarea>	
+      
+   </body>
+</html>
