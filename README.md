@@ -2,10 +2,10 @@
 
 ## To use this tool 
 
-  *Requires node js install
-  *Run npm install command
-  *Run npm start
-  *This tool runs on port 8081
+  * Requires node js install
+  * Run npm install command
+  * Run npm start
+  * This tool runs on port 8081
 
 
 ## node-ews github repository
